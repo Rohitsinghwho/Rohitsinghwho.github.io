@@ -1,2 +1,8 @@
 node_modules
 dist
+.env.local
+*-key.json
+serviceAccount*.json
+functions/node_modules
+.firebase
+firebase-debug.log
