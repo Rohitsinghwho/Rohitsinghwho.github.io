@@ -84,23 +84,29 @@ const portfolioData = {
     {
       id: "01",
       name: "CodeFlow Analyzer",
-      tags: ["node.js", "acorn", "ast", "graph algorithms", "express"],
+      tags: ["node.js", "acorn", "ast", "graph algorithms", "express", "react", "vite", "cytoscape.js", "docker"],
       year: 2026,
       description:
-        "reads a javascript project and shows which function calls which. point it at a folder and it tells you what functions exist, who calls them, and the shortest call chain between any two. built on a real parser, so it never runs your code and never guesses from text patterns.",
+        "reads a javascript project and shows which function calls which. point it at a folder or paste a github link and it tells you what functions exist, who calls them, and the shortest call chain between any two. built on a real parser, so it never runs your code and never guesses from text patterns. now with an http api and a react web interface.",
       flow: [
-        { label: "project folder" },
+        { label: "folder / github link" },
         { label: "scanner", hl: true },
         { label: "parser", hl: true },
         { label: "analyzer", hl: true },
         { label: "linker", hl: true },
         { label: "graph" },
+        { label: "express api", hl: true },
+        { label: "react ui" },
       ],
       features: [
         "functions, methods (incl. #private) and callbacks",
         "es import/export and commonjs require",
         "links calls across files with certain / guess confidence",
         "callers, callees and shortest path, safe against recursion",
+        "http api: analyze, list functions, view source, callers, callees, paths",
+        "react web ui: searchable function list, zoomable call graph, path finder, dark and light mode",
+        "analyze any public github repo by pasting its link",
+        "public-ready: per-visitor projects, limits, docker, render + github pages deploy",
       ],
       code: `const cf = new CodeFlow();
 const { fileResults } = await cf.analyze("./project");
@@ -109,7 +115,8 @@ const graph = cf.buildGraph(fileResults);
 graph.getCallees("main.js#main");
 graph.findPath("b.js#init", "b.js#helper");
 // ["b.js#init", "b.js#helper"]`,
-      status: "javascript · in progress (api + ui next)",
+      status: "javascript · engine, api and web ui built",
+      liveUrl: "https://rohitsinghwho.github.io/CodeFlow-Analyzer/",
       sourceUrl: "https://github.com/Rohitsinghwho/CodeFlow-Analyzer",
     },
     {
