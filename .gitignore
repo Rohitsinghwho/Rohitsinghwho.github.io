@@ -6,3 +6,7 @@ serviceAccount*.json
 functions/node_modules
 .firebase
 firebase-debug.log
+
+worker/node_modules
+worker/.wrangler
+.dev.vars

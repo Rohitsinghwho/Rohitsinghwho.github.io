@@ -1,0 +1,9 @@
+name = "rportfolio-chat"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[ai]
+binding = "AI"
+
+[vars]
+FIREBASE_PROJECT_ID = "rportfolio-a4fd9"
